@@ -32,7 +32,7 @@ int main() {
 
         while(!firstStatement || !secondStatement){
             secYear++;
-            if (firstBreakStatement || secondBreakStatement) {,
+            if (firstBreakStatement || secondBreakStatement) {
                 break;
             }
         }
