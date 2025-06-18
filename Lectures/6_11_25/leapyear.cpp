@@ -40,6 +40,8 @@ int main() {
         diff = secYear - year;
         year += diff;
 
+        cout << "The next leap year is " << year;
+
         return -1;
     }
 
