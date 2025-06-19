@@ -1,45 +1,41 @@
-// This program averages test scores. It asks the user for the
-// number of students and the number of test scores per student.
 #include <iostream>
+
 using namespace std;
 
-int main()
-{
-    int numStudents,    // Number of students
-        numTests;       // Number of tests per student
-    double average;     // Average test score for a student
+void deep();
+void deeper();
+void showSum(int num1, int num2, int num3);
+int showSum2(int num1, int num2, int num3);
 
-    // Get the number of students
-    cout << "This program averages test scores.\n";
-    cout << "How many students are there? ";
-    cin  >> numStudents;
 
-    // Get the number of test scores per student
-    cout << "How many test scores does each student have? ";
-    cin  >> numTests;
-    cout << endl;
+int main() {
+    cout << "Main function\n";
+/*  deep();
+    deeper(); */
 
-    // Read each student's scores and compute their average
-    for (int snum = 1; snum <= numStudents; snum++)    // Outer loop
-    {
-        double total = 0.0;   // Initialize accumulator
+    showSum(2, 3, 5);
+    showSum2(2, 3, 5);
 
-        for (int test = 1; test <= numTests; test++)   // Inner loop
-        {
-            int score;
-
-            // Read a score and add it to the accumulator
-            cout << "Enter score " << test << " for ";
-            cout << "student " << snum << ": ";
-            cin  >> score;
-            total += score;
-        } // End inner loop
-
-        // Compute and display the student's average
-        average = total / numTests;
-        cout << "The average score for student " << snum;
-        cout << " is " << average << "\n\n";
-    } // End outer loop
 
     return 0;
+}
+
+void deep() {
+    cout << "This is the deep function\n";
+    deeper();
+    cout << "I am back inside the deep function\n";
+
+}
+
+void deeper() {
+    cout << "This is the deeper function\n";
+}
+
+void showSum(int num1, int num2, int num3) {
+    cout << "Sum is " << num1 + num2 + num3;
+}
+
+int showSum2(int num1, int num2, int num3) {
+    //cout << "Sum is " << num1 + num2 + num3;
+    return num1 + num2 + num3;
 }
