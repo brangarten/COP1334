@@ -1,44 +1,35 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-void getNums(int&, int&);
-void orderNums(int&, int&);
+bool getNum(int&);
+
 
 
 int main() {
 
-    int yin, yang;
+    int x;
 
-    getNums(yin, yang);
-    orderNums(yin, yang);
 
+    cout << "Enter a num 1-100 \n";
+    cin >> x;
     
-
-    cout << yin << ' ' << yang;
-//    getNumber();
+    getNum(x);
 
     return 0;
 }
 
-void getNums(int &input1, int &input2) {
-    cout << "Enter first input \n> ";
-    cin >> input1;
+bool getNum(int &x) {
 
-    system("cls");
-
-    cout << "Enter second input \n> ";
-    cin >> input2;
-}
-
-void orderNums(int &num1, int &num2) {
-    int temp;
-
-    if (num1 > num2) {
-        temp = num2;
-        num2 = num1;
-        num1 = temp;
-    } else {
-        cout << "Everything is fine :33";
+    while(true) {
+        if (1 <= x && x <= 100) {
+            break;
+        } else {
+            cout << "Invalid try again 1-100 \n> ";
+            cin >> x;
+        }
     }
+
+    return true;
 }
