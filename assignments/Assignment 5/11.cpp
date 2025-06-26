@@ -2,22 +2,32 @@
 
 using namespace std;
 
-bool isPrime(int num);
+bool isPrime(int x);
 
 int main() {
 
+    int x = 5;
+
+    cout << isPrime(25);
     cout << isPrime(5);
-    cout << isPrime(2);
-    cout << isPrime(9);
+    cout << isPrime(1);
 
     return 0;
 }
 
-bool isPrime(int num) {
+bool isPrime(int x) {
     
-    if (num % 2 == 0 && num % 3 == 0) {
-        return false;
+    int count;
+    // Itterate 1-X
+    for (int i = 1; i <= x; i++) {
+        if (x % i == 0) {
+            count++;
+        }
     }
 
-    return true;
+    if (count > 2) {
+        return false;
+    } else {
+        return true;
+    }
 }
