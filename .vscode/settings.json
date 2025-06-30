@@ -4,7 +4,11 @@
         "initializer_list": "cpp",
         "utility": "cpp",
         "xstring": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "ostream": "cpp",
+        "array": "cpp",
+        "string_view": "cpp"
     },
-    "C_Cpp.default.compilerPath": "C:/msys64/ucrt64/bin/g++.exe"
+    "C_Cpp.default.compilerPath": "/bin/g++",
+    "C_Cpp.errorSquiggles": "disabled"
 }

@@ -6,28 +6,24 @@
 
 using namespace std;
 
+void printMenu();
+
 int main() {
     
     while(true) {
-        char selection;
-        short arrSize,
-              num;
 
-        int finalValue;
+        short arrSize;
+
+        int   selection, 
+              num, 
+              finalValue = 0;
             
         vector<int> nums;
+        printMenu();
 
-        cout << "\tCalculator \n";
-        cout << "1. Addition"       << endl
-             << "2. Subtraction"    << endl
-             << "3. Multiplication" << endl
-             << "4. Division"       << endl
-             << "q to quit"         << endl 
-             << endl;
-
-        cout << "Enter arithmetic operation to perform (1-4 || q) \n> ";
+        cout << "Enter arithmetic operation to perform (1-4) \n> ";
         cin >> selection;
-        if (selection == 'q') terminate();
+        if (selection == 5) terminate();
         
         // Set fixed size for how many nums to be in the array
         cout << "How many numbers? \n> ";
@@ -42,18 +38,12 @@ int main() {
         }
 
 
-
-/*
-        cout << endl << "Enter two numbers: \n> ";
-        cin >> num2;
-        cin >> num1;
-*/
         cout << endl;
         
 
 
         switch(selection) {
-            case '1':
+            case 1:
                 // loopArg just itterates through entire array of nums
                 // and for each element in an array gets assignment with the specific operator
                 for(loopArg) {
@@ -61,61 +51,43 @@ int main() {
                 }
                 cout << "Sum: " << finalValue << endl;
                 break;
-            case '2':
+            case 2:
                 for(loopArg) {
                     finalValue -= nums[i];
                 }
                 cout << "Difference: " << finalValue << endl;
                 break;
-            case '3':
+            case 3:
                 finalValue = 1; // so it wont be multiplied by 0
                 for(loopArg) {
                     finalValue *= nums[i];
                 }
                 cout << "Product: " << finalValue << endl;
                 break;
-            case '4':
+            case 4:
                 finalValue = nums[0];
                 for(loopArgQuot) {
                     finalValue /= nums[i];
                 }
                 cout << "Quotient: " << finalValue << endl;
                 break;
-            case 'q':
+            case 5:
                 terminate();
             default:
                 cout << "Invalid option";
         }
-
-        /* THIS WAS MY OLD CALCULATOR
-        i had defines for the keywords add, diff, prod, and quot for its specific operator
-        
-        switch(selection) {
-            case '1':
-                cout << "Sum: " << num1 add num2
-                     << endl;
-                break;
-            case '2':
-                cout << "Difference: " << num2 diff num1
-                     << endl;
-                break;
-            case '3':
-                cout << "Product: " <<  num1 prod num2
-                     << endl;
-                break;
-            case '4':
-                cout << "Quotient: " << num2 quot num1
-                     << endl;
-                break;
-            case 'q':
-                terminate();
-            default:
-                cout << "Invalid option";
-        }
-    */
-
     }
 
     return 0;
 
+}
+
+void printMenu() {
+    cout << "\tCalculator \n";
+    cout << "1. Addition"       << endl
+         << "2. Subtraction"    << endl
+         << "3. Multiplication" << endl
+         << "4. Division"       << endl
+         << "5. Quit"           << endl 
+         << endl;
 }
