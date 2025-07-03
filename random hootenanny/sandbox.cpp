@@ -9,10 +9,8 @@ bool searchValue(char arr[], int size, char value) {
         if(arr[i] == value) {
             return true;
         }
-        else {
-            return false;
-        }
     }
+    return false;
 }
 
 int main() {
@@ -36,21 +34,21 @@ int main() {
     // while true
     // if (operation == '+' || operation == '-' || operation == '/' || operation == '*') then break
     
-    /*
+    
     while(true) {
 
         cin >> operation;
-        if(searchValue(list, 5, operation) != true) {
-            cout << "Invalid Operation, Try again. \n";
-        }
-        else {
+        if(searchValue(list, 5, operation)) {
             break;
         }
+        else {
+            cout << "Invalid Operation, Try again. \n";
+        }
     }
-    */
+    
 
     // In summary this is better than to search into an array.
-
+/* 
     while(true) {
         cin >> operation;
     
@@ -60,7 +58,7 @@ int main() {
     
         cout << "Invalid Operator, try again. \n> ";
    }
-
+ */
     cout << endl;
     //cout << operation << endl;
 
