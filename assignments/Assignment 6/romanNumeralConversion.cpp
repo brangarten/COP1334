@@ -4,6 +4,9 @@
 
 using namespace std;
 
+void quit(int&);
+void checkValidInput(int&);
+
 int main() {
 
     // Setup map
@@ -14,28 +17,34 @@ int main() {
 
     int userInput;
 
+    cout << romanNumeral[10];
+
     while(true) {
         // Prompt user for input
         cout << "> ";
         cin  >> userInput;
 
-        if (userInput == 0) {
-            terminate();
+        // Checks to if userInput is valid
+        checkValidInput(userInput);
+
+    }      
+}
+
+void quit(int& userInput) {
+    if (userInput == 0) {
+        exit(0);
+    }
+}
+
+void checkValidInput(int& userInput) {
+    while(true) {
+        quit(userInput);
+        if (userInput < 0 || userInput > 20) {
+            cout << "Invalid Input. Try again \n> ";
+            cin  >> userInput;
         }
-
-        // Checks if user inputted a number out of range
-        while(true) {
-            if (0 < userInput || userInput > 20) {
-                cout << "Invalid Input. Try again \n> ";
-                cin  >> userInput;
-            }
-            else {
-                break;
-            }
-        }
-
-        if (1 <= userInput && userInput >= 20) {
-
+        else {
+            break;
         }
     }
 }
