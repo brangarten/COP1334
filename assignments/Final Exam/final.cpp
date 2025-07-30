@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <windows.h>
 #include <chrono>
 #include <thread>
 
@@ -128,6 +127,9 @@ void CreateAccount(vector<Bank*>& list) {
        a dangling pointer. Also, storing temporary variables into a new object */
     Bank* account = new Bank(a, b, c);
     list.push_back(account);
+
+    delete account;
+    account = nullptr;
 }
 
 /* Global Variable for Accounts. This is done because I wanted functions to be
@@ -203,7 +205,8 @@ int main() {
 void Alert(const string& message, const string &level) {
     cout << '[' << level << ']' << ' ' << message << endl;
 
-    /* Based on level play specific beep */
+/*
+    /* Based on level play specific beep 
     if (level == "INFO") {
         Beep(450, 150);
     } 
@@ -216,6 +219,7 @@ void Alert(const string& message, const string &level) {
     } else {
         Beep(525, 500);
     }
+*/
 }    
 
 void PrintMenu() {
@@ -248,10 +252,13 @@ void DoubleEndl() {
 }
 
 void ExitTune() {
+    /*
     // C5, G4, E4, D4, C4
     Beep(523, 200);
     Beep(392, 200);
     Beep(330, 200);
     Beep(294, 400);
     Beep(262, 500);
+*/
+    
 } 
